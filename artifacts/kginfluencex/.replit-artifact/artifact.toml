@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "KGinfluenceX"
+version = "1.0.0"
+id = "artifacts/kginfluencex"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24186
+
+[services.development]
+run = "pnpm --filter @workspace/kginfluencex run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kginfluencex", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kginfluencex/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24186"
+BASE_PATH = "/"
