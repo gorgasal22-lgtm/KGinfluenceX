@@ -35,7 +35,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg)', padding: '20px' }}>
+    <div style={{ width: '100%', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg)', padding: '20px' }}>
       <div className="panel" style={{ width: '100%', maxWidth: '400px', margin: 0 }}>
         <div className="panel-head" style={{ justifyContent: 'center', borderBottom: 'none', paddingBottom: 0, paddingTop: '30px' }}>
           <div className="logo-icon" style={{ width: '40px', height: '40px', borderRadius: '10px' }}>

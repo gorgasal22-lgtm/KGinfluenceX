@@ -53,7 +53,7 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
         <div className="nav-section">
           <div className="nav-section-label">{labels.workspace || 'WORKSPACE'}</div>
           {mainNav.map(item => (
-            <Link key={item.id} href={item.path} className={`nav-item ${pathname === item.path ? 'active' : ''}`}>
+            <Link key={item.id} to={item.path} className={`nav-item ${pathname === item.path ? 'active' : ''}`}>
               <svg className="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d={item.icon}/>
               </svg>
@@ -65,7 +65,7 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
         <div className="nav-section">
           <div className="nav-section-label">{labels.aitools || 'AI TOOLS'}</div>
           {aiNav.map(item => (
-            <Link key={item.id} href={item.path} className={`nav-item ${pathname === item.path ? 'active' : ''}`}>
+            <Link key={item.id} to={item.path} className={`nav-item ${pathname === item.path ? 'active' : ''}`}>
               <svg className="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d={item.icon}/>
               </svg>
@@ -77,7 +77,7 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
         <div className="nav-section">
           <div className="nav-section-label">{labels.system || 'SYSTEM'}</div>
           {sysNav.map(item => (
-            <Link key={item.id} href={item.path} className={`nav-item ${pathname === item.path ? 'active' : ''}`}>
+            <Link key={item.id} to={item.path} className={`nav-item ${pathname === item.path ? 'active' : ''}`}>
               <svg className="nav-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d={item.icon}/>
               </svg>
