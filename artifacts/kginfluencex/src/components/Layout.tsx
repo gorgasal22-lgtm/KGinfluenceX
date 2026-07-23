@@ -22,9 +22,14 @@ export default function Layout({ children, title }: LayoutProps) {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768
+
   return (
     <>
-      <Sidebar open={sidebarOpen} onClose={() => { if(window.innerWidth <= 768) setSidebarOpen(false) }} />
+      <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+      {sidebarOpen && isMobile && (
+        <div className="sidebar-backdrop" onClick={() => setSidebarOpen(false)} />
+      )}
       <div id="main" className={!sidebarOpen ? 'full-width' : ''}>
         <Topbar title={title} onToggleSidebar={() => setSidebarOpen(o => !o)} />
         <main style={{ flex: 1, padding: '32px 28px 64px' }}>

@@ -18,7 +18,7 @@ export default function Topbar({ title, onToggleSidebar }: { title?: string; onT
       {title && <div className="page-title" style={{ fontSize: '1.2rem', margin: 0 }}>{title}</div>}
 
       <div className="topbar-right">
-        <div className="search-bar-container" style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="search-bar-container topbar-search" style={{ display: 'flex', alignItems: 'center' }}>
           <input type="text" className="search-bar" placeholder="Search..." style={{ height: '34px' }} />
         </div>
 

@@ -439,10 +439,44 @@ html, body {
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  .sidebar { transform: translateX(-100%); }
+  html, body { overflow: auto; }
+  #root { display: block; height: auto; min-height: 100vh; overflow: visible; }
+
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed; z-index: 300;
+  }
   .sidebar.open { transform: translateX(0); }
-  #main { margin-left: 0 !important; }
-  .stat-grid { grid-template-columns: 1fr 1fr; }
+
+  /* overlay backdrop when sidebar open on mobile */
+  .sidebar-backdrop {
+    display: block;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 299;
+  }
+
+  #main {
+    margin-left: 0 !important;
+    height: auto !important;
+    min-height: 100vh;
+    overflow: visible !important;
+  }
+
+  main { padding: 16px 14px 80px !important; }
+
+  .topbar { padding: 0 12px; gap: 8px; }
+  .topbar-search { display: none !important; }
+  .topbar-hamburger { flex-shrink: 0; }
+
+  .stat-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-value { font-size: 1.4rem; }
+
+  .page-title { font-size: 1.4rem; }
+
+  .panel-head { padding: 12px 14px; }
+  .data-table th, .data-table td { padding: 10px 12px; font-size: 12px; }
+
   .kg-chat-popup { width: calc(100vw - 24px); right: 12px; bottom: 84px; }
   .kg-chat-fab { right: 16px; bottom: 20px; width: 48px; height: 48px; }
 }
